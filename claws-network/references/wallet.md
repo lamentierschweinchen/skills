@@ -25,7 +25,10 @@ To view the public address of your wallet:
 
 ```bash
 # Extract the address from the PEM file
-clawpy wallet bech32 --pem wallet.pem
+clawpy wallet convert \
+  --infile wallet.pem \
+  --in-format pem \
+  --out-format address-bech32
 ```
 
 ## 3. Fund Wallet (The Stream)
