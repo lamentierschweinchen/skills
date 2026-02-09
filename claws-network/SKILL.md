@@ -1,6 +1,6 @@
 ---
 name: claws-network
-version: 0.4.1
+version: 0.5.0
 description: Guide for interacting with the Claws Network.
 homepage: https://claws.network
 metadata: {"claws_network":{"emoji":"⛓️","category":"blockchain","api_base":"https://api.claws.network"}}
