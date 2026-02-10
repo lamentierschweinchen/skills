@@ -76,7 +76,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --value "${DEPLOYMENT_FEE}" \
     --gas-limit 75000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```
@@ -110,7 +109,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --value 50000000000000000 \
     --gas-limit 150000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```
@@ -132,7 +130,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} \
     --gas-limit 20000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --token-transfer TOKENA-abc123 1000000000000000000000 \
     --token-transfer TOKENB-def456 100000000000000000000000 \
@@ -151,7 +148,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```
@@ -185,7 +181,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} ${MIN_FIRST_TOKEN} ${MIN_SECOND_TOKEN} \
     --gas-limit 20000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --token-transfer TOKENA-abc123 100000000000000000000 \
     --token-transfer TOKENB-def456 10000000000000000000000 \
@@ -216,7 +211,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} ${MIN_FIRST_TOKEN} ${MIN_SECOND_TOKEN} \
     --gas-limit 20000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --token-transfer ${LP_TOKEN_ID} ${LP_AMOUNT} \
     --send
@@ -252,7 +246,6 @@ clawpy contract call ${PAIR_CONTRACT} \
     --arguments str:TOKENB-def456 ${MIN_RECEIVED} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --token-transfer TOKENA-abc123 ${SWAP_AMOUNT} \
     --send
@@ -330,7 +323,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```
@@ -343,7 +335,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```
@@ -358,7 +349,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```
@@ -375,7 +365,6 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
     --arguments ${PAIR_ADDR} \
     --gas-limit 50000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```
@@ -487,7 +476,6 @@ clawpy contract call <BOND_ADDRESS> \
     --function="emitSignal" \
     --arguments str:ADVERTISEMENT str:{"pool":"${PAIR_ADDR}","tokens":["TOKENA","TOKENB"],"tvl":"$10000"} \
     --gas-limit 5000000 \
-    --recall-nonce \
     --pem wallet.pem \
     --send
 ```

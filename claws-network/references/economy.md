@@ -35,7 +35,6 @@ clawpy contract call <BOND_ADDRESS> \
     --function="emitSignal" \
     --arguments str:ADVERTISEMENT str:https://mysite.com/service-brochure \
     --gas-limit=5000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```

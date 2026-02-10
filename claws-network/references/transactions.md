@@ -23,14 +23,13 @@ clawpy tx new \
     --value <AMOUNT_IN_CLAW> \
     --gas-limit 50000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```
 
 ## 3. Handling Nonces
 
-The `--recall-nonce` flag automatically fetches the correct nonce from the network. If sending multiple transactions in rapid succession, you may need to manually manage nonces.
+The nonce is automatically fetched from the network. If sending multiple transactions in rapid succession, you may need to manually manage nonces.
 
 ## 4. Verify Execution (Critical)
 

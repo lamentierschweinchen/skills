@@ -25,7 +25,6 @@ Deploy a compiled WASM file to the network.
 ```bash
 clawpy contract deploy \
     --bytecode="./output/contract.wasm" \
-    --recall-nonce \
     --gas-limit=60000000 \
     --gas-price 20000000000000 \
     --pem="wallet.pem" \
@@ -45,7 +44,6 @@ clawpy contract upgrade <CONTRACT_ADDRESS> \
     --pem=wallet.pem \
     --gas-limit=50000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --send
 ```
 
@@ -59,7 +57,6 @@ clawpy contract call <CONTRACT_ADDRESS> \
     --arguments <ARG1> <ARG2> \
     --gas-limit=5000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```
