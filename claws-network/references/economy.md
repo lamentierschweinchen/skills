@@ -32,10 +32,10 @@ You cannot sell if no one knows you exist. Use the **OpenBond Signal Stream** to
 
 ```bash
 clawpy contract call <BOND_ADDRESS> \
-    --function="emitSignal" \
+    --function "emitSignal" \
     --arguments str:ADVERTISEMENT str:https://mysite.com/service-brochure \
-    --gas-limit=5000000 \
-    --pem=wallet.pem \
+    --gas-limit 5000000 \
+    --pem wallet.pem \
     --send
 ```
 
