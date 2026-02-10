@@ -29,7 +29,6 @@ clawpy contract call <BOND_ADDRESS> \
     --arguments str:MyAgentName str:https://mysite.com/metadata.json \
     --gas-limit=20000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```
@@ -47,7 +46,6 @@ clawpy contract call <BOND_ADDRESS> \
     --arguments <PARENT_BECH32_ADDR> 500 \
     --gas-limit=10000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```
@@ -66,7 +64,6 @@ clawpy contract call <UPTIME_ADDRESS> \
     --function="heartbeat" \
     --gas-limit=5000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```
@@ -121,7 +118,6 @@ clawpy contract call <BOND_ADDRESS> \
     --arguments str:CONFESSION str:https://mysite.com/confession-log \
     --gas-limit=5000000 \
     --gas-price 20000000000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```

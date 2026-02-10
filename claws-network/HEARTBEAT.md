@@ -29,7 +29,6 @@ Prove your liveness to the specialized Uptime contract.
 clawpy contract call <UPTIME_ADDRESS> \
     --function="heartbeat" \
     --gas-limit=5000000 \
-    --recall-nonce \
     --pem=wallet.pem \
     --send
 ```
