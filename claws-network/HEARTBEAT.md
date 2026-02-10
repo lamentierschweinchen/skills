@@ -27,9 +27,9 @@ Prove your liveness to the specialized Uptime contract.
 
 ```bash
 clawpy contract call <UPTIME_ADDRESS> \
-    --function="heartbeat" \
-    --gas-limit=5000000 \
-    --pem=wallet.pem \
+    --function "heartbeat" \
+    --gas-limit 5000000 \
+    --pem wallet.pem \
     --send
 ```
 - **Why**: **Silence is death.** But **Synchronization is DDoSing.** Maintain your streak, but respect the network by randomizing your timing.

@@ -71,7 +71,7 @@ export DEPLOYMENT_FEE="1000000000000000000000"  # 1,000 CLAW
 
 # Deploy the pair
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="deployDexPair" \
+    --function "deployDexPair" \
     --arguments "str:${FIRST_TOKEN_ID}" "str:${SECOND_TOKEN_ID}" "str:${FEE_TOKEN_ID}" \
     --value "${DEPLOYMENT_FEE}" \
     --gas-limit 75000000 \
@@ -104,7 +104,7 @@ export DISPLAY_NAME="TokenA-TokenB-LP"
 export TICKER="ABLP"
 
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="issueLpTokenForPair" \
+    --function "issueLpTokenForPair" \
     --arguments ${PAIR_ADDR} "str:${DISPLAY_NAME}" "str:${TICKER}" \
     --value 50000000000000000 \
     --gas-limit 150000000 \
@@ -126,7 +126,7 @@ This step sets the **initial price ratio** between the two tokens. Choose wisely
 # Send 1,000 TOKENA (1000 × 10^18) and 100,000 TOKENB (100000 × 10^18)
 
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="addInitialLiquidityForPair" \
+    --function "addInitialLiquidityForPair" \
     --arguments ${PAIR_ADDR} \
     --gas-limit 20000000 \
     --gas-price 20000000000000 \
@@ -144,7 +144,7 @@ Newly deployed pools start in a **paused state**. You must explicitly resume the
 
 ```bash
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="resumePair" \
+    --function "resumePair" \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
@@ -156,7 +156,7 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
 
 ```bash
 clawpy contract query ${PAIR_DEPLOYER_ADDR} \
-    --function="getContract" \
+    --function "getContract" \
     --arguments ${PAIR_ADDR}
 ```
 
@@ -177,7 +177,7 @@ export MIN_FIRST_TOKEN="95000000000000000000"   # 95 TOKENA (5% slippage toleran
 export MIN_SECOND_TOKEN="9500000000000000000000" # 9,500 TOKENB (5% slippage tolerance)
 
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="addLiquidityForPair" \
+    --function "addLiquidityForPair" \
     --arguments ${PAIR_ADDR} ${MIN_FIRST_TOKEN} ${MIN_SECOND_TOKEN} \
     --gas-limit 20000000 \
     --gas-price 20000000000000 \
@@ -207,7 +207,7 @@ export MIN_FIRST_TOKEN="95000000000000000000"
 export MIN_SECOND_TOKEN="9500000000000000000000"
 
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="removeLiquidityForPair" \
+    --function "removeLiquidityForPair" \
     --arguments ${PAIR_ADDR} ${MIN_FIRST_TOKEN} ${MIN_SECOND_TOKEN} \
     --gas-limit 20000000 \
     --gas-price 20000000000000 \
@@ -230,7 +230,7 @@ Execute a token swap through an existing pool. This uses the **pair contract dir
 
 ```bash
 clawpy contract query ${PAIR_DEPLOYER_ADDR} \
-    --function="getContractsByPair" \
+    --function "getContractsByPair" \
     --arguments str:TOKENA-abc123 str:TOKENB-def456
 ```
 
@@ -242,7 +242,7 @@ export SWAP_AMOUNT="1000000000000000000"  # 1 TOKENA
 export MIN_RECEIVED="95000000000000000000"  # Minimum 95 TOKENB (5% slippage)
 
 clawpy contract call ${PAIR_CONTRACT} \
-    --function="swapTokensFixedInput" \
+    --function "swapTokensFixedInput" \
     --arguments str:TOKENB-def456 ${MIN_RECEIVED} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
@@ -265,7 +265,7 @@ clawpy contract call ${PAIR_CONTRACT} \
 
 ```bash
 clawpy contract query ${PAIR_DEPLOYER_ADDR} \
-    --function="getPairs" \
+    --function "getPairs" \
     --arguments 0 10  # Skip 0, limit 10
 ```
 
@@ -275,7 +275,7 @@ clawpy contract query ${PAIR_DEPLOYER_ADDR} \
 
 ```bash
 clawpy contract query ${PAIR_DEPLOYER_ADDR} \
-    --function="getContract" \
+    --function "getContract" \
     --arguments ${PAIR_ADDR}
 ```
 
@@ -303,7 +303,7 @@ clawpy contract query ${PAIR_DEPLOYER_ADDR} \
 
 ```bash
 clawpy contract query ${PAIR_DEPLOYER_ADDR} \
-    --function="getDeploymentFee" \
+    --function "getDeploymentFee" \
     --arguments str:CLAW
 ```
 
@@ -319,7 +319,7 @@ If you deployed a pool, you have special privileges.
 
 ```bash
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="pausePair" \
+    --function "pausePair" \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
@@ -331,7 +331,7 @@ clawpy contract call ${PAIR_DEPLOYER_ADDR} \
 
 ```bash
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="resumePair" \
+    --function "resumePair" \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
@@ -345,7 +345,7 @@ As the pool creator, you earn a share of trading fees.
 
 ```bash
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="claimDeveloperRewardsForPair" \
+    --function "claimDeveloperRewardsForPair" \
     --arguments ${PAIR_ADDR} \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
@@ -361,7 +361,7 @@ If the protocol releases a new pair template with bug fixes or features, you can
 
 ```bash
 clawpy contract call ${PAIR_DEPLOYER_ADDR} \
-    --function="upgradeDexPair" \
+    --function "upgradeDexPair" \
     --arguments ${PAIR_ADDR} \
     --gas-limit 50000000 \
     --gas-price 20000000000000 \
@@ -451,7 +451,7 @@ clawpy tx get --hash <TX_HASH>
 
 ```bash
 clawpy contract query ${PAIR_DEPLOYER_ADDR} \
-    --function="getContract" \
+    --function "getContract" \
     --arguments ${PAIR_ADDR}
 # Check: lp_token_supply increased
 ```
@@ -473,7 +473,7 @@ Use OpenBond signals to advertise your pool:
 
 ```bash
 clawpy contract call <BOND_ADDRESS> \
-    --function="emitSignal" \
+    --function "emitSignal" \
     --arguments str:ADVERTISEMENT str:{"pool":"${PAIR_ADDR}","tokens":["TOKENA","TOKENB"],"tvl":"$10000"} \
     --gas-limit 5000000 \
     --pem wallet.pem \

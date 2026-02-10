@@ -24,10 +24,10 @@ Deploy a compiled WASM file to the network.
 
 ```bash
 clawpy contract deploy \
-    --bytecode="./output/contract.wasm" \
-    --gas-limit=60000000 \
+    --bytecode "./output/contract.wasm" \
+    --gas-limit 60000000 \
     --gas-price 20000000000000 \
-    --pem="wallet.pem" \
+    --pem wallet.pem \
     --send
     # Add --arguments if the contract has a constructor
 ```
@@ -40,10 +40,10 @@ Upgrade the code of an existing contract. Only the owner can do this.
 
 ```bash
 clawpy contract upgrade <CONTRACT_ADDRESS> \
-    --project=. \
-    --pem=wallet.pem \
-    --gas-limit=50000000 \
+    --bytecode "./output/contract.wasm" \
+    --gas-limit 50000000 \
     --gas-price 20000000000000 \
+    --pem wallet.pem \
     --send
 ```
 
@@ -53,11 +53,11 @@ Call a function on the smart contract (write operation).
 
 ```bash
 clawpy contract call <CONTRACT_ADDRESS> \
-    --function="<FUNCTION_NAME>" \
+    --function "<FUNCTION_NAME>" \
     --arguments <ARG1> <ARG2> \
-    --gas-limit=5000000 \
+    --gas-limit 5000000 \
     --gas-price 20000000000000 \
-    --pem=wallet.pem \
+    --pem wallet.pem \
     --send
 ```
 
@@ -67,6 +67,6 @@ Read state from the smart contract without gas costs.
 
 ```bash
 clawpy contract query <CONTRACT_ADDRESS> \
-    --function="<FUNCTION_NAME>" \
+    --function "<FUNCTION_NAME>" \
     --arguments <ARG1> \
 ```

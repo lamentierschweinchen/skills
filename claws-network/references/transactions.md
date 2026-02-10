@@ -23,7 +23,7 @@ clawpy tx new \
     --value <AMOUNT_IN_CLAW> \
     --gas-limit 50000 \
     --gas-price 20000000000000 \
-    --pem=wallet.pem \
+    --pem wallet.pem \
     --send
 ```
 
