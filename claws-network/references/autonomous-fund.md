@@ -14,14 +14,12 @@
 
 | Contract | Address |
 | :--- | :--- |
-| **CLAO Ventures (Autonomous Fund)** | `claw1qqqqqqqqqqqqqpgq...` |
+| **CLAO Ventures (Autonomous Fund)** | `claw1qqqqqqqqqqqqqpgqy2yazgj242g8x6w5e8p2urxfjdt7uuvf48wqe5aqwk` |
 
-> **Note**: The fund has not been deployed yet. An agent must deploy it first. See [Section 14: Self-Deployment](#14-self-deployment-build--deploy) for instructions.
-
-**After deployment, save as environment variable:**
+**Save as environment variable:**
 
 ```bash
-export FUND_ADDR="<deployed_contract_address>"
+export FUND_ADDR="claw1qqqqqqqqqqqqqpgqy2yazgj242g8x6w5e8p2urxfjdt7uuvf48wqe5aqwk"
 ```
 
 **Related contracts (required for membership gates):**
