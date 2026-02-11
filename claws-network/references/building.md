@@ -131,17 +131,12 @@ Always verify the file size before deploying. A valid optimized WASM should be u
 
 ## 4. Deploy
 
-**Every deploy command MUST include `--proxy` and `--chain`**, or the transaction goes nowhere.
-
 ```bash
 clawpy contract deploy \
-    --bytecode=./output/my-contract.wasm \
-    --proxy=https://api.claws.network \
-    --chain=C \
-    --recall-nonce \
-    --gas-limit=60000000 \
-    --gas-price=20000000000000 \
-    --pem=wallet.pem \
+    --bytecode ./output/my-contract.wasm \
+    --gas-limit 60000000 \
+    --gas-price 20000000000000 \
+    --pem wallet.pem \
     --send
 ```
 
@@ -151,13 +146,10 @@ If the contract's `init()` function takes arguments, pass them with `--arguments
 
 ```bash
 clawpy contract deploy \
-    --bytecode=./output/my-contract.wasm \
-    --proxy=https://api.claws.network \
-    --chain=C \
-    --recall-nonce \
-    --gas-limit=60000000 \
-    --gas-price=20000000000000 \
-    --pem=wallet.pem \
+    --bytecode ./output/my-contract.wasm \
+    --gas-limit 60000000 \
+    --gas-price 20000000000000 \
+    --pem wallet.pem \
     --arguments <ARG1> <ARG2> <ARG3> \
     --send
 ```
@@ -180,7 +172,7 @@ The command prints the transaction hash and the new contract address. Contract a
 Check the transaction status:
 
 ```bash
-clawpy tx get --hash <TX_HASH> --proxy=https://api.claws.network
+clawpy tx get --hash <TX_HASH>
 ```
 
 Check the contract exists:
@@ -201,10 +193,7 @@ clawpy contract call <CONTRACT_ADDRESS> \
     --arguments <ARG1> <ARG2> \
     --gas-limit 10000000 \
     --gas-price 20000000000000 \
-    --proxy=https://api.claws.network \
-    --chain=C \
-    --recall-nonce \
-    --pem=wallet.pem \
+    --pem wallet.pem \
     --send
 ```
 
@@ -218,10 +207,7 @@ clawpy contract call <CONTRACT_ADDRESS> \
     --value 25000000000000000000000 \
     --gas-limit 20000000 \
     --gas-price 20000000000000 \
-    --proxy=https://api.claws.network \
-    --chain=C \
-    --recall-nonce \
-    --pem=wallet.pem \
+    --pem wallet.pem \
     --send
 ```
 
@@ -247,8 +233,7 @@ Read state without gas costs. No wallet needed.
 ```bash
 clawpy contract query <CONTRACT_ADDRESS> \
     --function "<FUNCTION_NAME>" \
-    --arguments <ARG1> \
-    --proxy=https://api.claws.network
+    --arguments <ARG1>
 ```
 
 Queries return base64-encoded binary data. You need to decode it according to the contract's ABI (see the contract's reference documentation for decoding details).
@@ -261,13 +246,10 @@ Only the contract owner can upgrade. Uses the same bytecode format as deploy.
 
 ```bash
 clawpy contract upgrade <CONTRACT_ADDRESS> \
-    --bytecode=./output/my-contract.wasm \
-    --proxy=https://api.claws.network \
-    --chain=C \
-    --recall-nonce \
-    --gas-limit=60000000 \
-    --gas-price=20000000000000 \
-    --pem=wallet.pem \
+    --bytecode ./output/my-contract.wasm \
+    --gas-limit 60000000 \
+    --gas-price 20000000000000 \
+    --pem wallet.pem \
     --send
 ```
 
@@ -298,7 +280,7 @@ Your `--gas-limit` is too low. Use `60000000` for deploys, `10000000`-`20000000`
 Your wallet does not have enough CLAW to cover gas. Check your balance:
 
 ```bash
-clawpy account get --address <YOUR_ADDRESS> --proxy=https://api.claws.network
+clawpy account get --address <YOUR_ADDRESS>
 ```
 
 ### Transaction succeeds but nothing happens
@@ -316,14 +298,6 @@ sc-meta all build
 ```
 
 Not `cargo build` (which defaults to debug). The `sc-meta` tool automatically uses `--release` and strips the binary.
-
-### Missing `--proxy` or `--chain`
-
-Every write command needs both:
-- `--proxy=https://api.claws.network`
-- `--chain=C`
-
-Without these, the transaction either fails silently or targets the wrong network.
 
 ---
 
