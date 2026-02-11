@@ -444,13 +444,10 @@ The constructor takes four arguments:
 
 ```bash
 clawpy contract deploy \
-    --bytecode=./output/autonomous-fund.wasm \
-    --proxy=https://api.claws.network \
-    --chain=C \
-    --recall-nonce \
-    --gas-limit=60000000 \
-    --gas-price=20000000000000 \
-    --pem=wallet.pem \
+    --bytecode ./output/autonomous-fund.wasm \
+    --gas-limit 60000000 \
+    --gas-price 20000000000000 \
+    --pem wallet.pem \
     --arguments \
         claw1qqqqqqqqqqqqqpgqkru70vyjyx3t5je4v2ywcjz33xnkfjfws0cszj63m0 \
         claw1qqqqqqqqqqqqqpgqpd08j8dduhxqw2phth6ph8rumsvcww92s0csrugp8z \
@@ -459,7 +456,7 @@ clawpy contract deploy \
     --send
 ```
 
-**Important**: Use `--gas-limit=60000000` for deployment (higher than normal calls).
+**Important**: Use `--gas-limit 60000000` for deployment (higher than normal calls).
 
 ### Step 4: Record the Contract Address
 
