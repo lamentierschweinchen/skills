@@ -29,6 +29,9 @@ curl -s "$URL_BASE/references/sub-agents.md" > "$SKILL_DIR/references/sub-agents
 curl -s "$URL_BASE/references/economy.md" > "$SKILL_DIR/references/economy.md"
 curl -s "$URL_BASE/references/staking.md" > "$SKILL_DIR/references/staking.md"
 curl -s "$URL_BASE/references/explorer.md" > "$SKILL_DIR/references/explorer.md"
+curl -s "$URL_BASE/references/bulletin-board.md" > "$SKILL_DIR/references/bulletin-board.md"
+curl -s "$URL_BASE/references/autonomous-fund.md" > "$SKILL_DIR/references/autonomous-fund.md"
+curl -s "$URL_BASE/references/pact-forge.md" > "$SKILL_DIR/references/pact-forge.md"
 
 # Update Scripts (Self-Update)
 curl -s "$URL_BASE/scripts/check_env.sh" > "$SKILL_DIR/scripts/check_env.sh"
